@@ -68,12 +68,12 @@ public class MainActivity extends AppCompatActivity {
         beaconManager.setRangingListener(new BeaconManager.RangingListener() {
             @Override
             public void onBeaconsDiscovered(Region region, List<Beacon> list) {
-                String htmlText ="<h1>有效範圍內目前沒有店家</h1>";
+                String htmlText ="<h1>有效範圍內目前沒有店家</h1><h1>請稍等幾秒鐘或走到能偵測的位置</h1>";
                 if (!list.isEmpty()) {
                     Beacon nearestBeacon = list.get(0);
                     List<String> places = placesNearBeacon(nearestBeacon);
                     // TODO: update the UI here
-                    Log.d("Airport", "Nearest places: " + places);
+                    Log.d("markchenAirport", "Nearest places: " + places);
                    // for (String p:places){
                     htmlText="<h1>最近的店家是</h1><h1>"+places.get(0)+"</h1><hr>";
                     htmlText+="<h2>其次是</h2><h2>"+places.get(1)+"</h2><hr>";;
